@@ -40,3 +40,32 @@ let infoGaara = {
   status: 'kasekage',
 }
 console.log(infoGaara)
+
+//Promises
+const newProm = new Promise((res, rej) => {
+  let arrProm = [1, 45, 64, 22, 908, 4512]
+  const obProm = {
+    port: 3000,
+    status: 'Error: 404',
+    server: 'alcatel-soua',
+  }
+  setTimeout(() => {
+    arrProm.pop()
+    arrProm.unshift(80, 13, 27)
+    console.log(arrProm)
+  }, 2000)
+  res(arrProm)
+})
+newProm
+  .then((arrThen_1) => {
+    setTimeout(() => {
+      console.log(arrThen_1[4])
+    }, 3000)
+  })
+  .then(() => {
+    setTimeout(() => {
+      let a = 4 * 13
+      console.log(a)
+    }, 4000)
+  })
+  .catch((err) => console.error(err))
